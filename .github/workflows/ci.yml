@@ -38,6 +38,7 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - run: npm ci
+      - run: npx prisma generate
       - run: npm run typecheck
 
   test-unit:
@@ -59,6 +60,7 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - run: npm ci
+      - run: npx prisma generate
       - run: npm test -- --coverage
       - uses: codecov/codecov-action@v4
         with:
@@ -134,6 +136,7 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - run: npm ci
+      - run: npx prisma generate
       - run: npm run build
 
   ci-success:
